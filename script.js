@@ -19,12 +19,12 @@ let passwordsMatch = false;
 let numberCorrect = false;
 let emailCorrect = false;
 
-// then lest create two variables where we store a test for a number and for an email we will use it lated in our validateForm function
+// then lets create two variables where we store a test for a number and for an email we will use it lated in our validateForm function
 
 let numberCheck = /^\d+$/;
 let emailCheck = /\S+@\S+\.\S+/;
 
-// lets creat our main function that will check validation of our form, and depends of the results it will exacute different error/sucess messages
+// lets creaet our main function that will check validation of our form, depending on the results it will exacute different error/sucess messages
 function validateForm() {
   // using Constraint API method checkValidity() -> https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation
   isValid = form.checkValidity();
@@ -80,7 +80,7 @@ function validateForm() {
     errorEl[2].innerHTML = "";
     emailCorrect = true;
   }
-  //   checking if our passwords match if they do we set the value of passwordsMatch to true and we will keep border color green
+  //   checking if our passwords match if they do we set the value of passwordsMatch to true and we will make border color green
   if (
     password1El.value &&
     password2El.value &&
@@ -89,12 +89,14 @@ function validateForm() {
     passwordsMatch = true;
     password1El.style.borderColor = "green";
     password2El.style.borderColor = "green";
-  } else if (password1El.value.trim() === "") {
+  }
+//   we alsoe want to check if user does not pass any empty value to the password input if user does it error will be displayed
+  else if (password1El.value.trim() === "") {
     errorEl[3].innerHTML = "Password cannot be blank";
     errorEl[3].style.color = "red";
     password1El.style.borderColor = "red";
   } else {
-    // Otherwise it will set passwordsMatch to false and display error messaage in below the confirma password input
+    // The last option will display error messaage below the confirmation password input,that passwords do not match
     passwordsMatch = false;
     errorEl[3].innerHTML = "";
     password1El.style.borderColor = "green";
@@ -110,7 +112,7 @@ function validateForm() {
     messageContainerEl.style.borderColor = "green";
     errorEl[4].innerHTML = "";
   }
-
+//   in the end of our function we put the last statement that display the error message that user need to fill all the fields
   if (!isValid) {
     messageEl.textContent = "Please fill out all fields!";
     messageEl.style.color = "red";
