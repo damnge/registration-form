@@ -9,98 +9,100 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 class="form__title">Sing Up Today!</h1>
-      <!-- Our Form -->
-      <form id="form" novalidate>
-        <!-- if you want to check all the options created through HTML validation just remove "novalidate" in the <form> tag -->
-        <!-- Full Name Input -->
-        <div class="input__wrapper">
-          <label for="name">Full Name</label>
-          <!-- we added aria label for accesibility purpose so computer is able to convert text into speech -->
-          <!-- in option after required we pass a min and max lenght of characters -->
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your Full Name"
-            aria-label="Please, write your full name. This is a required field"
-            required
-            minlength="3"
-            maxlength="100"
-          />
-          <div class="error__message"></div>
+    <main>
+      <div class="container">
+        <h1 class="form__title">Sing Up Today!</h1>
+        <!-- Our Form -->
+        <form id="form" novalidate>
+          <!-- if you want to check all the options created through HTML validation just remove "novalidate" in the <form> tag -->
+          <!-- Full Name Input -->
+          <div class="input__wrapper">
+            <label for="name">Full Name</label>
+            <!-- we added aria label for accesibility purpose so computer is able to convert text into speech -->
+            <!-- in option after required we pass a min and max lenght of characters -->
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your Full Name"
+              aria-label="Please, write your full name. This is a required field"
+              required
+              minlength="3"
+              maxlength="100"
+            />
+            <div class="error__message"></div>
+          </div>
+          <!-- Phone Number Input -->
+          <div class="input__wrapper">
+            <label for="phone">Phone Number</label>
+            <!-- in this input except aria-label after required we pass the pattern that it must be digtis from 0-9 and that it must be 7 of them as we live in Iceland there is also a title which reminds the user that it need to provide 7 digits  -->
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Your Phone Number"
+              aria-label="Please, write your phone number that is seven digits number. This is a required field"
+              required
+              pattern="[0-9]{7}"
+              title="Please include 7 digits number"
+            />
+            <div class="error__message"></div>
+          </div>
+          <!-- Email Input -->
+          <div class="input__wrapper">
+            <label for="email">Email Addres</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your email - example@email.com"
+              aria-label="Please, write your email. This is a required field"
+              required
+            />
+            <div class="error__message"></div>
+          </div>
+          <!-- Password Input -->
+          <div class="input__wrapper">
+            <label for="password1">Password</label>
+            <!-- in this input we collect password and after required we provide a pattern that means that password need to be 8 characters that include 1 uppercase character, 1 lowercase character and 1 number. Information is add in the title so the message is dipslayed to the user -->
+            <input
+              type="password"
+              id="password1"
+              placeholder="Create Password (Min. 8 characters)"
+              aria-label="Please, create your password. Please provide at least 8 characters with at least one capital letter, one lowercase letter and one number"
+              required
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+              title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
+            />
+            <div class="error__message"></div>
+          </div>
+          <!-- Confrim Password Input -->
+          <div class="input__wrapper">
+            <label for="password2">Confirm Password</label>
+            <!-- we put the same pattern in this input as well just adding to the title that user need to make sure that password matches the first one -->
+            <input
+              type="password"
+              name="password"
+              id="password2"
+              placeholder="Confirm Password"
+              aria-label="Please, confrim your password. Please provide at least 8 characters with at least one capital letter, one lowercase letter and one number"
+              required
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+              title="Make sure that your password match"
+            />
+            <div class="error__message"></div>
+          </div>
+          <!-- submit button -->
+          <button type="submit" id="submit-btn" aria-label="Registert button">
+            Register
+          </button>
+        </form>
+        <!-- Error/Success Message -->
+        <div class="message__container">
+          <h3 id="message"></h3>
         </div>
-        <!-- Phone Number Input -->
-        <div class="input__wrapper">
-          <label for="phone">Phone Number</label>
-          <!-- in this input except aria-label after required we pass the pattern that it must be digtis from 0-9 and that it must be 7 of them as we live in Iceland there is also a title which reminds the user that it need to provide 7 digits  -->
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            placeholder="Your Phone Number"
-            aria-label="Please, write your phone number that is seven digits number. This is a required field"
-            required
-            pattern="[0-9]{7}"
-            title="Please include 7 digits number"
-          />
-          <div class="error__message"></div>
-        </div>
-        <!-- Email Input -->
-        <div class="input__wrapper">
-          <label for="email">Email Addres</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your email - example@email.com"
-            aria-label="Please, write your email. This is a required field"
-            required
-          />
-          <div class="error__message"></div>
-        </div>
-        <!-- Password Input -->
-        <div class="input__wrapper">
-          <label for="password1">Password</label>
-          <!-- in this input we collect password and after required we provide a pattern that means that password need to be 8 characters that include 1 uppercase character, 1 lowercase character and 1 number. Information is add in the title so the message is dipslayed to the user -->
-          <input
-            type="password"
-            id="password1"
-            placeholder="Create Password (Min. 8 characters)"
-            aria-label="Please, create your password. Please provide at least 8 characters with at least one capital letter, one lowercase letter and one number"
-            required
-            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
-            title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
-          />
-          <div class="error__message"></div>
-        </div>
-        <!-- Confrim Password Input -->
-        <div class="input__wrapper">
-          <label for="password2">Confirm Password</label>
-          <!-- we put the same pattern in this input as well just adding to the title that user need to make sure that password matches the first one -->
-          <input
-            type="password"
-            name="password"
-            id="password2"
-            placeholder="Confirm Password"
-            aria-label="Please, confrim your password. Please provide at least 8 characters with at least one capital letter, one lowercase letter and one number"
-            required
-            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
-            title="Make sure that your password match"
-          />
-          <div class="error__message"></div>
-        </div>
-        <!-- submit button -->
-        <button type="submit" id="submit-btn" aria-label="Registert button">
-          Register
-        </button>
-      </form>
-      <!-- Error/Success Message -->
-      <div class="message__container">
-        <h3 id="message"></h3>
       </div>
-    </div>
+    </main>
     <!-- Script -->
     <script src="script.js"></script>
   </body>
