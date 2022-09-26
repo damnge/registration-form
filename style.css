@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+/* styling of our main container */
+
+.container {
+  width: 480px;
+  height: 675px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px 10px rgba(167, 164, 164, 0.3);
+  padding: 25px;
+}
+
+/* styling our form */
+
+form {
+  width: 90%;
+}
+.form__title {
+  margin-bottom: 30px;
+}
+.input__wrapper {
+  height: 65px;
+  margin-bottom: 17px;
+}
+
+label {
+  position: relative;
+  bottom: 3px;
+}
+
+input {
+  width: 100%;
+  height: 34px;
+  padding: 5px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+::placeholder {
+  color: rgb(76, 76, 76);
+}
+
+.error__message {
+  font-size: 14px;
+  letter-spacing: 0px;
+}
+
+/* changing the style of the input border wheather the value is valid or invalid */
+
+input:valid {
+  border: 1px solid green;
+}
+
+/* input:invalid {
+  border: 1px solid red;
+} */
+
+input:focus {
+  border: 2px solid blue;
+}
+
+/* styling of our main register button */
+
+button {
+  cursor: pointer;
+  color: white;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  transition: all 0.2s;
+}
+
+/* hover and acvite state of our button */
+
+button:hover {
+  filter: brightness(150%);
+  background-color: rgb(66, 66, 66);
+  transition: all 0.2s;
+}
+
+button:focus {
+  border: 1px solid blue;
+}
+
+/* styling of our message container displayed to the user */
+.message__container {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  width: 90%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #333;
+  padding: 15px;
+}
